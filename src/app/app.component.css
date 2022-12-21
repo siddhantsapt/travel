@@ -1,0 +1,8 @@
+nav
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: gray;
+  height: 50px;
+}

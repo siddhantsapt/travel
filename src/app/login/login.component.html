@@ -1,0 +1,17 @@
+
+<form #myForm="ngForm" (submit)="UserInfo(myForm.value)">
+  name:<input type="text" name="name" #name="ngModel" ngModel minlength="4" required [class.is-invalid]="name.invalid && name.touched" >
+  <div *ngIf="name.invalid &&name.touched">
+    Plaese enter valid name
+  </div>
+  <br>
+  password:<input type="text" name="pass" #pass="ngModel" ngModel minlength="6" required [class.is-invalid]="pass.invalid && pass.touched">
+  <div *ngIf="pass.invalid &&pass.touched"  >
+    Plaese enter valid password
+  </div>
+<br>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
+
+
+</form>

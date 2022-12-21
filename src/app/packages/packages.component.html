@@ -1,0 +1,27 @@
+<p>packages works!</p>
+
+<form #new_form="ngForm" (submit)="doComputations(new_form.value)">
+  Sources :
+  <select name="source" #source="ngModel"  ngModel>
+    <option *ngFor="let s of all_source">
+      {{s}}
+    </option>
+</select>
+<br>
+destinations:
+<select name="destination" #destination="ngModel" ngModel >
+  <option  *ngFor="let d of all_destination">
+    {{d}}
+  </option>
+</select>
+<br>
+number of peoples:<input type="number" #people="ngModel" ngModel name="people" >
+<br>
+
+<button type="submit">Submit</button>
+
+<div *ngIf="flag;else thenpart">
+  You have selected the source :{{s_source}} and destination :{{d_destination}} with {{s_people}} and price is {{t_price}}
+</div>
+<ng-template  #thenpart></ng-template>
+</form>
